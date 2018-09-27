@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "A no-nonsense boilerplate for a react SPA.",
   "scripts": {
-    "start": "NODE_ENV=production node server.js",
-    "dev": "concurrently -n 'F,B' -c 'magenta,blue' 'npm run dev:frontend' 'npm run dev:backend'",
+    "start": "concurrently -n 'S,P' -c 'blue,green' 'NODE_ENV=production node server.js' 'npm run postServer'",
+    "dev": "concurrently -n 'F,B,P' -c 'magenta,blue,green' 'npm run dev:frontend' 'npm run dev:backend' 'npm run postServer'",
     "dev:frontend": "webpack-dev-server --mode development --hot",
     "dev:backend": "nodemon server.js --exec 'npm run lint && node'",
+    "postServer": "nodemon postServer.js --exec 'npm run lint && node'",
     "build": "npm run lint && webpack --mode production --display-error-details",
     "precommit": "lint-staged",
     "lint": "eslint ."
@@ -22,9 +23,9 @@
     "redux"
   ],
   "author": {
-    "name": "Rob Herley",
-    "email": "rherley@stevens.edu",
-    "url": "https://robherley.xyz"
+    "name": "Tim Leonard",
+    "email": "tim.matthew.leonard@gmail.com",
+    "url": "http://timleonard.site"
   },
   "license": "ISC",
   "devDependencies": {
@@ -69,7 +70,9 @@
     "morgan": "^1.9.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-hot-loader": "^4.0.0"
+    "react-hot-loader": "^4.0.0",
+    "socket.io": "^2.1.1",
+    "socket.io-client": "^2.1.1"
   },
   "lint-staged": {
     "*.{js,jsx}": [

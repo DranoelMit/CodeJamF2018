@@ -1,18 +1,15 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
+import Header from './components/Header';
+import Feed from './components/Feed';
+import PostButton from './components/PostButton'
 
 const App = () => (
-  <div className="placeholder">
-    <div>
-      <h1>React 16, Webpack 4, Babel 7</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque magnam
-        omnis quibusdam ratione quaerat nesciunt quia reprehenderit minus
-        consequuntur aliquid dolorum cumque accusantium placeat laudantium,
-        ducimus eius maxime incidunt ipsum?
-      </p>
-    </div>
-  </div>
+  <>
+  <Header />
+  <Feed />
+  <PostButton />
+  </>
 );
 
 export default hot(module)(App);
